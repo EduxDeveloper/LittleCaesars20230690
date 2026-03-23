@@ -19,7 +19,7 @@ pizzasController.postPizzas = async (req, res) =>{
     //#1 Solicitar los datos que se van a guardar
     const {name, description, price, stock} = req.body;
     //#2 Guardo en el model
-    const newPizza = new pizzasModel({name, description, price, stock, imgUrl})
+    const newPizza = new pizzasModel({name, description, price, stock})
     //#3 Guardar todo en la base
     await newPizza.save();
 
