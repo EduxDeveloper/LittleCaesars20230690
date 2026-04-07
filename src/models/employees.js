@@ -1,4 +1,4 @@
-import { Schema , model} from "mongoose";
+import { Schema, model, mongo } from "mongoose";
 
 const employeesSchema = new Schema({
     name:{
@@ -26,11 +26,18 @@ const employeesSchema = new Schema({
         type: String
     },
     idBranches:{
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongo.ObjectId,
         ref: "branches"
     }},{
         timestamps: true,
         strict: false
     });
+
+            /* old idBranches 
+
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "branches"
+
+            */
 
 export default model("employees", employeesSchema);

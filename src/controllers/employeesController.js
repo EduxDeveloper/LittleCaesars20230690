@@ -46,7 +46,7 @@ employeesController.postEmployees = async (req, res) =>{
     }
 
     //Validacion de la fecha de nacimiento
-    if (birthday > new Date.now() || birthday < new Date("1918-01-01")) {
+    if (birthday > new Date || birthday < new Date("1918-01-01")) {
         return res.status(400).json({message: "Fecha inválida"})
     }
 
@@ -134,3 +134,4 @@ employeesController.deleteEmployee = async (req, res) =>{
 
 }
 
+export default employeesController;
